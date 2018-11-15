@@ -28,7 +28,9 @@ Automatic enrollment lets users enroll their Windows 10 devices in Intune. To en
    - **All** - All users can automatically enroll their Windows 10 devices
 
       > [!IMPORTANT]
-      > If both **MAM user scope** and automatic MDM enrollment (**MDM user scope**) are enabled for a group, only MAM is enabled. Only MAM is added for users in that group when they workplace join personal device. Devices are not automatically MDM enrolled.
+      > If both MAM user scope and MDM user scope (which is automatic MDM enrollment) are enabled for all users (or the same groups of users) in a BYOD scenario, such as when using 'Add a work or school account' within Settings, be aware that MAM user scope will take precedence. The end result will be a device which is ready to consume Windows Information Protection (WIP) Policies (assuming you configured them), rather than being MDM enrolled.
+
+Note that this does not apply to corporate enrollment scenarios such as Azure AD domain join and Windows AutoPilot. That is, both the above scopes can be enabled and the MDM scope will take precedence, resulting in devices being MDM enrolled"
 
    ![Screenshot of the Azure portal](../media/auto-enroll-scope.png)
 
